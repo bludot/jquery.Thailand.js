@@ -13,7 +13,7 @@
 - [ ] Create proper building for client or server (lets have it the same thing)
 - [x] Write tests
 - [ ] add similarity using leven
-- [ ] make compatible to use as server side (express plugin or something) and client side
+- [ ] split into a client and server side (basically same code but we get the data differently)
 
 ## how you should use:
 This comes with a quite large json file and probably not a good idea to ship to production with it. 

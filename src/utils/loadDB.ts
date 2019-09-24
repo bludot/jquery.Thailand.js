@@ -12,11 +12,18 @@ class LoadDB {
     ) {
       location = defaultLocation;
     }
+    const rawData = this.loadData(location, type);
     if (type === 'json') {
-      const data = require(location);
-      this.db = preprocess(data);
+      this.db = preprocess(rawData);
     }
     return this.db;
+  }
+  private loadData(location: string, type: string) {
+    if (type === 'json') {
+      const data = require(location);
+      return data;
+    }
+    throw new Error('This type is not supported!');
   }
 }
 
