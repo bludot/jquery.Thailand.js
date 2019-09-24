@@ -1,3 +1,11 @@
 {
-	"extends": "tslint-config-airbnb-base",
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": ["node_modules/**"]
+  },
+  "rules": {
+    "indent": [true, "spaces", 2],
+    "object-literal-key-quotes": [false, "as-needed"],
+    "no-string-literal": [false]
+  }
 }
