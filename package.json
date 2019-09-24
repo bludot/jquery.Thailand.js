@@ -1,0 +1,51 @@
+{
+  "name": "thailand-address",
+  "version": "1.0.0",
+  "description": "Remake of jquery.thailand for use in both node and local",
+  "main": "src/index.js",
+  "scripts": {
+    "serve": "node index.js",
+    "start": "node --inspect=5858 -r ts-node/register ./src/index.ts",
+    "build:clean": "rm -rf dist",
+    "build:server": "tsc",
+    "build": "npm run build:clean",
+    "watch-node": "nodemon",
+    "watch-ts": "concurrently \"tsc --watch\" \"node dist/index.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bludot/jquery.Thailand.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bludot/jquery.Thailand.js/issues"
+  },
+  "homepage": "https://github.com/bludot/jquery.Thailand.js#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.20.0",
+    "tslint-config-airbnb-base": "^0.3.0"
+  },
+  "dependencies": {
+    "@types/node": "^12.7.5",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "npm start",
+    "ext": "ts"
+  }
+}
