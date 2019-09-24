@@ -10,7 +10,7 @@ describe('test Gerneral getting of data', () => {
       'zipcode'
     );
     expect(result).toHaveLength(1);
-    expect(result[0].zipcode).toBe(10250);
+    expect(result[0]).toBe(10250);
   });
 
   test('get multiple records from zipcode', () => {

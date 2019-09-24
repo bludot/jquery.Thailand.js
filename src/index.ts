@@ -45,7 +45,7 @@ class AddressService {
       const item = a[i][type];
       if (seen[item] !== 1) {
         seen[item] = 1;
-        out[j++] = a[i];
+        out[j++] = a[i][type];
       }
     }
     return out;
