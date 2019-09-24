@@ -14,6 +14,7 @@
 - [x] Write tests
 - [ ] add similarity using leven
 - [ ] split into a client and server side (basically same code but we get the data differently)
+- [ ] Roll up packaging
 
 ## how you should use:
 This comes with a quite large json file and probably not a good idea to ship to production with it. 
