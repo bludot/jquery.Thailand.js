@@ -4,7 +4,11 @@
 - get rid of jquery. We want to use this everywhere
 - Query just one part of a whole: we can get all districts in a given province. 
   This allows us to show a drop down based on the other input. 
+- adding your own dataset through a simple load function
+- Process two languages (or just one)
 
+## Examples:
+* https://codesandbox.io/s/jovial-architecture-p5rhy
 
 
 ## Todo:
