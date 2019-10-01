@@ -1,18 +1,31 @@
+import Address from './../types/Address';
 import preprocess from './preprocess';
 
 class LoadDB {
   private db: any;
-  public load(passedLocation: string, type: string, process: boolean = false) {
+  public load(
+    locationOrdata: string | any[],
+    type: string,
+    process: boolean = false
+  ) {
+    if ((typeof locationOrdata).toLowerCase()  !== 'string') {
+      if (process) {
+        this.db = preprocess(locationOrdata);
+      } else {
+        this.db = locationOrdata;
+      }
+      return this.db;
+    }
     const defaultLocation = './database/db.json';
     let location;
     if (
-      passedLocation === null ||
-      passedLocation === undefined ||
-      passedLocation === void 0
+      locationOrdata === null ||
+      locationOrdata === undefined ||
+      locationOrdata === void 0
     ) {
       location = defaultLocation;
     } else {
-      location = passedLocation;
+      location = locationOrdata;
     }
     const rawData = this.loadData(location, type);
     if (type === 'json') {
