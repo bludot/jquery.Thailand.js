@@ -2,8 +2,8 @@ import preprocess from './preprocess';
 
 class LoadDB {
   private db: any;
-  public load(passedLocation: string, type: string) {
-    const defaultLocation = './../database/db.json';
+  public load(passedLocation: string, type: string, process: boolean = false) {
+    const defaultLocation = './database/db.json';
     let location;
     if (
       passedLocation === null ||
@@ -11,10 +11,16 @@ class LoadDB {
       passedLocation === void 0
     ) {
       location = defaultLocation;
+    } else {
+      location = passedLocation;
     }
     const rawData = this.loadData(location, type);
     if (type === 'json') {
-      this.db = preprocess(rawData);
+      if (process) {
+        this.db = preprocess(rawData);
+      } else {
+        this.db = rawData;
+      }
     }
     return this.db;
   }

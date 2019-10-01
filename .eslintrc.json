@@ -1,0 +1,105 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "plugins": ["mocha"],
+  "extends": ["eslint:recommended", "airbnb-base"],
+  "globals": {
+    "t": false,
+    "td": false,
+    "describe": false,
+    "it": false,
+    "expect": false,
+    "assert": false,
+    "spy": false,
+    "after": false,
+    "afterEach": false,
+    "before": false,
+    "beforeEach": false,
+    "DEFAULT_LOCALE": false
+  },
+  "rules": {
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "one-var": "off",
+    "no-underscore-dangle": "off",
+    "vars-on-top": "off",
+    "consistent-return": "off",
+    "import/no-extraneous-dependencies": "off",
+    "func-names": "error",
+    "import/no-absolute-path": "error",
+    "import/extensions": [
+      "error",
+      {
+        "js": "ignorePackages",
+        "jsx": "never",
+        "json": "always"
+      }
+    ],
+    "prefer-promise-reject-errors": 1,
+    "import/no-dynamic-require": "off",
+    "import/prefer-default-export": "on",
+    "mocha/no-exclusive-tests": "error",
+    "mocha/no-identical-title": "error",
+    "mocha/no-global-tests": "error",
+    "no-console": "error",
+    "object-curly-newline": "off",
+    "prefer-destructuring": [
+      "error",
+      {
+        "array": false,
+        "object": true
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
+    "valid-jsdoc": 2,
+    "max-len": [
+      "error",
+      110,
+      2,
+      {
+        "ignoreUrls": true,
+        "ignoreComments": false,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "prefer-arrow-callback": "off",
+    "prefer-template": "off",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "no-cond-assign": ["error", "except-parens"],
+    "new-cap": [
+      "error",
+      {
+        "properties": false
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1
+      }
+    ]
+  },
+  "env": {
+    "node": true
+  }
+}
